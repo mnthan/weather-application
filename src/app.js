@@ -61,13 +61,10 @@ app.get('/weather',(req,res)=>{
             res.send(response)
         })
     })
-//     res.send({
-//         forecast : "it is snowing",
-//         location : req.query.address
-//     })
+
 })
 
-// Practice 
+
 app.get('/products',(req,res) =>{
     
     if (!req.query.search){
@@ -79,6 +76,7 @@ app.get('/products',(req,res) =>{
         products : []
     })
 })
+
 app.get('/help/*',(req,res) =>{
     res.render('404',{
         title : "404",
