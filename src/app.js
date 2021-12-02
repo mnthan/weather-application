@@ -5,6 +5,7 @@ const request = require ('postman-request')
 const geocode = require('./utils/geocode.js')
 const forecast = require ('./utils/forecast.js')
 
+
 const app = express()
 const port = process.env.PORT || 3000
 
@@ -13,7 +14,7 @@ const publicDirectoryPath = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname, '../template/views')
 const partialsPath = path.join(__dirname,'../template/partials')
 
-// Set up handlebars engine and views location
+// Set up handlpwdebars engine and views location
 app.set('view engine','hbs')
 app.set ('views',viewsPath)
 hbs.registerPartials(partialsPath)
