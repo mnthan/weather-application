@@ -13,8 +13,8 @@ const geocode = (address,callback) => {
             const latitude = body.features[0].center[1]
             const longtitude = body.features[0].center[0]
             const location = body.features[0].place_name
-            const coordinates  = {latitude ,longtitude,location}
-            callback(undefined, coordinates)
+            const data  = {latitude ,longtitude,location}
+            callback(undefined, data)
         }
     })
 
