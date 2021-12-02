@@ -1,5 +1,6 @@
 const request = require('postman-request')
 
+
 const forecast = (coordinates,coordinates2,callback)=>{
     const url ='http://api.weatherstack.com/current?access_key=be9beba18d1971dc128eba94e247c1c6&query='+coordinates+','+coordinates2+'&units=f'
     
@@ -9,7 +10,6 @@ const forecast = (coordinates,coordinates2,callback)=>{
         }else if(body.error){
             callback("can't find the place",undefined)
         }else{
-            console.log(body.current)
             callback(undefined,`The temperature is currently ${body.current.temperature}.\nIt feels like ${body.current.feelslike}.\nThe humidity is ${body.current.humidity}`)
         }
     })
