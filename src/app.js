@@ -52,7 +52,7 @@ app.get('/weather',(req,res)=>{
         })
     }
 
-    geocode(req.query.address,(error,{latitude,longtitude}={})=>{
+    geocode(req.query.address,(error,{latitude,longtitude,location}={})=>{
         if (error){
             return res.send({error})
         }
@@ -60,7 +60,11 @@ app.get('/weather',(req,res)=>{
             if (error){
                 return res.send({error})
             }
-            res.send(response)
+            res.send({
+                forecast : response,
+                location
+
+            })
         })
     })
 
@@ -97,5 +101,5 @@ app.get('*',(req,res)=>{
 
 
 app.listen(port,()=>{
-    console.log("server is up on portt 30000")
+    console.log("server is up on port 30000")
 })

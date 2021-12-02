@@ -9,12 +9,7 @@ const forecast = (coordinates,coordinates2,callback)=>{
         }else if(body.error){
             callback("can't find the place",undefined)
         }else{
-            const obj ={
-                location : body.location.name,
-                temperature : body.current.temperature ,
-                feels_like : body.current.feelslike
-            }
-            callback(undefined,obj)
+            callback(undefined,`The temperature is currently ${body.current.temperature}. It feels like ${body.current.feelslike}`)
         }
     })
 }
